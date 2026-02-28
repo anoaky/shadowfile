@@ -11,6 +11,8 @@ jobs:
         PLATFORM: [x86_64-unknown-linux-gnu, aarch64-unknown-linux-gnu]
     steps:
       - uses: actions/checkout@v5
+      - name: Add target
+        run: rustup target add ${{ matrix.PLATFORM }}
       - name: Switch to nightly
         run: rustup override set nightly
       - name: Build for "${{ matrix.PLATFORM }}"
