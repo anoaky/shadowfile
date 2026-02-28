@@ -4,6 +4,7 @@ version = "0.1.0-dev.1"
 edition = "2024"
 build = "build.rs"
 license = "MIT OR Apache-2.0"
+repository = "https://github.com/anoaky/shadowfile"
 
 [dependencies]
 anyhow = "1.0.102"
@@ -15,9 +16,6 @@ thiserror = "2.0.18"
 
 [build-dependencies]
 os_info = "3.14.0"
-
-[target.'cfg(target_os = "macos")'.dependencies]
-tempfile = "3.26.0"
 
 # The profile that 'dist' will build with
 [profile.dist]

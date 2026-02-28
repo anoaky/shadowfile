@@ -1,0 +1,19 @@
+name: Build and Test
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        PLATFORM: [x86_64-unknown-linux-gnu, aarch64-unknown-linux-gnu]
+    steps:
+      - uses: actions/checkout@v5
+      - name: Switch to nightly
+        run: rustup override set nightly
+      - name: Build for "${{ matrix.PLATFORM }}"
+        run: cargo build --release --target ${{ matrix.PLATFORM }}
+      - name: Test for "${{ matrix.PLATFORM }}"
+        run: cargo test --target ${{ matrix.PLATFORM }}
