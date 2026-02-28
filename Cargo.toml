@@ -9,7 +9,6 @@ repository = "https://github.com/anoaky/shadowfile"
 [dependencies]
 anyhow = "1.0.102"
 bimap = "0.6.3"
-cc = "1.2.56"
 lazy_static = "1.5.0"
 libc = "0.2.182"
 thiserror = "2.0.18"
